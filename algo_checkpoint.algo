@@ -1,0 +1,21 @@
+ALGORITHM algo_checkpoint 
+VAR
+    count1,count2,count3 :  INTEGER;
+    phrase : STRING;
+BEGIN
+    REPEAT
+        WRITE("ecrire une phrase qui  se termine par un point ");
+        READ(phrase);
+    UNTIL (phrase[len]=='.')
+   count1 := len(phrase);
+   count2 := 0;
+   count3 := 0;
+   FOR i FROM 1 TO count1 STEP step  DO
+        IF (phrase[i]==" ") THEN
+            count2 := count2 + 1;
+        END_IF
+        IF (phrase[i]== 'a'  OR phrase[i]== 'e' OR phrase[i]== 'u' OR phrase[i]== 'i' OR phrase[i]== 'o' OR phrase[i]== 'y') THEN
+            count3 := count3 + 1
+        END_IF
+   END_FOR
+END
